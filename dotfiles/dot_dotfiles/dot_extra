@@ -1,0 +1,37 @@
+# .extra
+
+# --- 1Password CLI ---
+if command -v op >/dev/null; then
+  eval "$(op completion zsh)"
+  compdef _op op
+fi
+
+# --- FZF-Tab Konfiguracja ---
+# Używamy bat do podglądu plików i eza do katalogów
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --line-range :30 $realpath 2>/dev/null'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --color=always --icons --level=2 $realpath'
+
+# Zoxide with "j" alias
+eval "$(zoxide init zsh --cmd j)"
+
+# History
+# --- Basic History Configuration ---
+HISTFILE=~/.zsh_history
+HISTSIZE=3000        # Number of commands loaded into the current session memory
+SAVEHIST=2999        # Number of commands saved in the history file on disk
+
+# --- Write & Sync Options ---
+setopt append_history       # Append to history file instead of overwriting it
+setopt inc_append_history   # Save each command immediately after execution
+setopt extended_history     # Save timestamp and duration of commands to history file
+setopt share_history        # Share history across all active terminal sessions
+
+# --- Duplicates & Cleanup ---
+setopt hist_ignore_all_dups # Remove older duplicate entries if a new one is added
+setopt hist_save_no_dups    # Do not write duplicate commands to the history file
+setopt hist_ignore_space    # Do not record commands starting with a space (useful for secrets)
+setopt hist_reduce_blanks   # Remove superfluous blanks from commands before saving
+
+# --- Control & Search ---
+setopt hist_verify          # Verify history expansion (e.g., !!) before execution
+setopt hist_find_no_dups    # Do not display duplicate entries when searching history

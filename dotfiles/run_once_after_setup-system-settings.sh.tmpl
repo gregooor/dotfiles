@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+set -eufo pipefail
+
+{{- if eq .chezmoi.os "darwin" }}
+echo "🍏  Setting macOS defaults"
+
+echo "📚  Show the ~/Library folder"
+chflags nohidden ~/Library
+
+# Screenshots
+echo "📸  Store screenshots in subfolder on desktop"
+mkdir -p ~/Screenshots
+defaults write com.apple.screencapture location ~/Screenshots
+
+echo "📸  Disable shadow in screenshots"
+defaults write com.apple.screencapture disable-shadow -bool true
+
+echo "📸  Save screenshots as PNG"
+defaults write com.apple.screencapture type -string "png"
+
+# Finder
+# echo "📁  Show all filename extensions in Finder"
+# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+echo "📁  Show hidden files in Finder"
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+echo "📁  Show path bar in Finder"
+defaults write com.apple.finder ShowPathbar -bool true
+
+echo "📁  Show status bar in Finder"
+defaults write com.apple.finder ShowStatusBar -bool true
+
+echo "📁  Keep folders on top when sorting by name"
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# Keyboard
+echo "⌨️  Set a blazingly fast keyboard repeat rate"
+defaults write NSGlobalDomain KeyRepeat -int 1
+
+echo "⌨️  Set a shorter Delay until key repeat"
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+# Trackpad
+echo "👆  Enable tap to click"
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# System
+echo "🔋  Show battery percentage in menu bar"
+defaults write com.apple.menuextra.battery ShowPercent -bool true
+
+# Dock
+echo "💈  Automatically hide and show the dock"
+defaults write com.apple.dock autohide -bool true
+{{ end -}}

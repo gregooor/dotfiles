@@ -1,0 +1,17 @@
+mattmc3/ez-compinit
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+Aloxaf/fzf-tab
+
+# Moved from OMZ
+ohmyzsh/ohmyzsh path:plugins/brew
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/macos
+ohmyzsh/ohmyzsh path:plugins/aws
+ohmyzsh/ohmyzsh path:plugins/pre-commit
+ohmyzsh/ohmyzsh path:plugins/terraform
+ohmyzsh/ohmyzsh path:plugins/kubectl
+ohmyzsh/ohmyzsh path:plugins/docker
+
+# This should be last
+zsh-users/zsh-syntax-highlighting

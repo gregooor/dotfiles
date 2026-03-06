@@ -1,0 +1,27 @@
+# .exports
+
+# Code as default editor.
+export EDITOR='code --wait'
+
+# Language
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# XDG Base Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+# tenv setup
+export TENV_ROOT="$XDG_DATA_HOME/tenv"
+
+# Terragrunt Caching
+export TG_PROVIDER_CACHE=true
+export TG_DOWNLOAD_DIR="$XDG_CACHE_HOME/terragrunt/download"
+export TG_PROVIDER_CACHE_DIR="$XDG_CACHE_HOME/terragrunt/providers"
+
+# K9s
+export K9S_CONFIG_DIR="$XDG_CONFIG_HOME/k9s"
+
+# uv (Python)
+export UV_CACHE_DIR="$XDG_CACHE_HOME/uv"
