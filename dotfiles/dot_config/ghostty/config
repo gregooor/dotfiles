@@ -5,6 +5,7 @@ working-directory = current-inherited
 font-size = 16
 font-family = MesloLGS Nerd Font Mono
 background-opacity = 0.96
+shell-integration-features = ssh-terminfo,ssh-env,sudo
 
 # keybindings
 keybind = cmd+s>r=reload_config

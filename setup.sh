@@ -35,7 +35,7 @@ if [ -d "$HOME/.local/share/chezmoi/.git" ]; then
   chezmoi update
   echo "✅  Chezmoi updated"
 else
-  chezmoi init bhaku
+  chezmoi init gregooor
   chezmoi apply
   echo "✅  Chezmoi initialized"
 fi

@@ -1,6 +1,6 @@
 # .aliases
 
-alias dotfiles='curl -sfL https://raw.githubusercontent.com/bhaku/dotfiles/master/setup.sh | bash'
+alias dotfiles='curl -sfL https://raw.githubusercontent.com/gregooor/dotfiles/master/setup.sh | bash'
 
 # Bat
 alias cat='bat --style=plain --paging=never'
@@ -9,7 +9,7 @@ alias b='bat'
 # Eza
 alias ls='eza --icons --group-directories-first'
 alias ll='eza -lh --icons --git --group-directories-first'
-alias lt='eza --tree --level=2 --icons'
+alias l='eza --tree --level=2 --icons'
 
 alias ..='cd ..'
 alias ...='cd ../..'
