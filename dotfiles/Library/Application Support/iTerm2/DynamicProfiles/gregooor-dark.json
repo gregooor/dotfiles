@@ -74,7 +74,7 @@
       "Unlimited Scrollback": true,
       "Mouse Reporting": true,
       "Left Option Key Sends": 2,
-      "Right Option Key Sends": 2,
+      "Right Option Key Sends": 0,
       "Silence Bell": true,
       "Use Bold Font": true,
       "Use Italic Font": true,
