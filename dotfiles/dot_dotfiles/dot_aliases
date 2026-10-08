@@ -10,7 +10,11 @@ alias b='bat'
 alias ls='eza --icons --group-directories-first'
 alias ll='eza -lh --icons --git --group-directories-first'
 alias l='eza --tree --level=2 --icons'
+alias lt='eza --tree --level=2 --icons'
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias md='mkdir -p'
+
+# Kubecolor
+alias kubectl="kubecolor"
