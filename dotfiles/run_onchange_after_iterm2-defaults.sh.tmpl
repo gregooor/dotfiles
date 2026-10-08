@@ -1,0 +1,13 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+set -eufo pipefail
+# profile hash (re-run when the profile changes): {{ include "Library/Application Support/iTerm2/DynamicProfiles/gregooor-dark.json" | sha256sum }}
+
+echo "🖥️  Configuring iTerm2 (dark theme + default profile)"
+# Make the dynamic profile the default one
+defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "6F1D0C3E-8A52-4B7C-9E41-2D5A7B0C9F11"
+# Theme: 1 = Dark
+defaults write com.googlecode.iterm2 TabStyleWithAutomaticOption -int 1
+# Don't nag about preferences location
+defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
+{{ end -}}

@@ -35,3 +35,13 @@ setopt hist_reduce_blanks   # Remove superfluous blanks from commands before sav
 # --- Control & Search ---
 setopt hist_verify          # Verify history expansion (e.g., !!) before execution
 setopt hist_find_no_dups    # Do not display duplicate entries when searching history
+
+# --- direnv (per-directory env from .envrc) ---
+if command -v direnv >/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
+# --- Atuin (shell history search, Ctrl-R) ---
+if command -v atuin >/dev/null; then
+  eval "$(atuin init zsh --disable-up-arrow)"
+fi
